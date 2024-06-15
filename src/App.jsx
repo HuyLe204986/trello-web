@@ -18,7 +18,7 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
 
 function ModeSelect() {
-  const { mode, setMode } = useColorScheme()
+  const { mode, setMode } = useColorScheme() // làm việc với cả 3 mode: dark, light, system
   const handleChange = (event) => {
     const selectedMode = event.target.value
     setMode(selectedMode)
@@ -58,7 +58,7 @@ function ModeSelect() {
 }
 
 function ModeToggle() {
-  const { mode, setMode } = useColorScheme()
+  const { mode, setMode } = useColorScheme() // làm việc với cả 3 mode: dark, light, system dùng cái prefers-color-scheme giống dưới để lấy ra giá trị dark, light của system
   // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   // const prefersLightMode = useMediaQuery('(prefers-color-scheme: light)')
   // console.log('prefersDarkMode', prefersDarkMode)
