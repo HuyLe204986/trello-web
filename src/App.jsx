@@ -3,9 +3,7 @@ import BatteryCharging20Icon from '@mui/icons-material/BatteryCharging20'
 import BackHandIcon from '@mui/icons-material/BackHand'
 import HomeIcon from '@mui/icons-material/Home'
 import { pink } from '@mui/material/colors'
-
 function App() {
-
   return (
     <>
       <div>abc</div>
