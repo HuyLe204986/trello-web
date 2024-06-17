@@ -11,7 +11,7 @@ const AppBar = () => {
     }}>
       <ModeSelect />
     </Box>
-  );
+  )
 }
 
 export default AppBar
