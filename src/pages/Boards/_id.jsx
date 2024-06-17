@@ -1,5 +1,5 @@
 import Container from '@mui/material/Container'
-import AppBar from '../../components/AppBar'
+import AppBar from '~/components/AppBar'
 import BroadBar from './BroadBar'
 import BroadContent from './BroadContent'
 
