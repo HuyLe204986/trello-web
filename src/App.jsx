@@ -6,7 +6,7 @@
 // console.log('prefersDarkMode', prefersDarkMode)
 // console.log('prefersLightMode', prefersLightMode)
 
-import Broad from './pages/Boards/_id'
+import Broad from '~/pages/Boards/_id'
 
 function App() {
   return (
