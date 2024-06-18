@@ -38,6 +38,7 @@ const BroadBar = () => {
       gap: 2,
       paddingX: 2,
       overflowX: 'auto',
+      '&::-webkit-scrollbar-track': { m: 2 },
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
       borderBottom: '1px solid #00bfa5'
     }}>
@@ -98,7 +99,10 @@ const BroadBar = () => {
               width: 34,
               height: 34,
               fontSize: 16,
-              border: 'none'
+              border: 'none',
+              color: 'white',
+              cursor: 'pointer',
+              '&:first-of-type': { bgcolor: '#a4b0be' }
             }
           }}
         >
