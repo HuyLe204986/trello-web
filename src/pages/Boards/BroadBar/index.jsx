@@ -11,7 +11,7 @@ const BroadBar = () => {
     }}>
       Broad bar
     </Box>
-  );
+  )
 }
 
 export default BroadBar
