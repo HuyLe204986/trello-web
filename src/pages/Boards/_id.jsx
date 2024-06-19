@@ -1,7 +1,7 @@
 import Container from '@mui/material/Container'
-import AppBar from '~/components/AppBar'
-import BroadBar from './BroadBar'
-import BroadContent from './BroadContent'
+import AppBar from '~/components/AppBar/AppBar'
+import BroadBar from './BroadBar/BroadBar'
+import BroadContent from './BroadContent/BroadContent'
 
 
 const Board = () => {

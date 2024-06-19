@@ -39,8 +39,7 @@ const BroadBar = () => {
       paddingX: 2,
       overflowX: 'auto',
       '&::-webkit-scrollbar-track': { m: 2 },
-      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2'),
-      borderBottom: '1px solid #00bfa5'
+      bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#34495e' : '#1976d2')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Chip
