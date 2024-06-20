@@ -9,7 +9,6 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 
-
 import ContentCut from '@mui/icons-material/ContentCut'
 import ContentCopy from '@mui/icons-material/ContentCopy'
 import ContentPaste from '@mui/icons-material/ContentPaste'
@@ -21,17 +20,36 @@ import DragHandleIcon from '@mui/icons-material/DragHandle'
 import ListCards from './ListCards/ListCards'
 
 import { mapOrder } from '~/utils/sorts'
+import { useSortable } from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
 
 const Column = ({ column }) => {
-  const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
+  const { attributes, listeners, setNodeRef, transform, transition } = useSortable({
+    id: column._id,
+    data: { ... column }
+  })
+
+  const dndKitColumnStyles = {
+    /**
+     * Nếu sử dụng css transform như docs sẽ lỗi kiểu stretch(bị kéo dãn)
+     * https://github.com/clauderic/dnd-kit/issues/117
+     */
+    // transform: CSS.Transform.toString(transform),
+    transform: CSS.Translate.toString(transform),
+    transition
+    // touchAction: 'none' // dành cho sensor default dạng pointerSensor
+  }
 
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => { setAnchorEl(event.currentTarget) }
   const handleClose = () => { setAnchorEl(null) }
 
+  const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
+
   return (
     <Box
+      ref={setNodeRef} style={dndKitColumnStyles} {...attributes} {...listeners}
       sx={{
         minWidth: '300px',
         maxWidth: '300px',
