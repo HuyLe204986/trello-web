@@ -12,6 +12,7 @@ import BoltIcon from '@mui/icons-material/Bolt'
 import FilterListIcon from '@mui/icons-material/FilterList'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 
+import { capitalizeFirstLetter } from '~/utils/formatters'
 const MENU_STYLES = {
   color: 'white',
   bgcolor: 'transparent',
@@ -26,12 +27,12 @@ const MENU_STYLES = {
   }
 }
 
-const BroadBar = () => {
+const BoardBar = ({ board }) => {
   return (
     <Box sx={{
       // backgroundColor: 'primary.dark',
       width: '100%',
-      height: (theme) => theme.trello.broadBarHeight,
+      height: (theme) => theme.trello.boardBarHeight,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -45,14 +46,14 @@ const BroadBar = () => {
         <Chip
           sx={MENU_STYLES}
           icon={<DashboardIcon />}
-          label="Trello Board"
+          label={board?.title}
           clickable
         />
 
         <Chip
           sx={MENU_STYLES}
           icon={<VpnLockIcon />}
-          label="Public/Private Workspace"
+          label={capitalizeFirstLetter(board?.type)}
           clickable
         />
 
@@ -141,4 +142,4 @@ const BroadBar = () => {
   )
 }
 
-export default BroadBar
+export default BoardBar
